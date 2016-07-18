@@ -9,6 +9,7 @@ group :test do
   gem 'figaro'
   gem 'capybara'
   gem 'faraday'
+  gem 'simplecov', :require => false
 end
 
 group :development, :test do
