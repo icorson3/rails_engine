@@ -5,7 +5,7 @@ class Api::V1::Merchants::FindController < ApplicationController
       table = Merchant.arel_table
       merchant = Merchant.where(table[:name].matches("#{params["name"]}"))
     elsif params["id"]
-      merchant = Merchant.find(params[:id])
+      merchant = Merchant.where(id: params[:id])
     elsif params["created_at"]
       merchant = Merchant.where(created_at: params[:created_at])
     elsif params["updated_at"]
