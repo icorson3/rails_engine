@@ -1,12 +1,8 @@
 class Api::V1::Items::FindController < ApplicationController
 
   def index
-    if params["name"]
-      table = Item.arel_table
-      item = Item.where(table[:name].matches("#{params["name"]}"))
-    elsif params["description"]
-      table = Item.arel_table
-      item = Item.where(table[:description].matches("#{params["description"]}"))
+    if params[:id]
+      item = Item.where(id: params[:id])
     else
       item = Item.where(item_params)
     end
@@ -14,12 +10,8 @@ class Api::V1::Items::FindController < ApplicationController
   end
 
   def show
-    if params["name"]
-      table = Item.arel_table
-      item = Item.find_by(table[:name].matches("#{params["name"]}"))
-    elsif params["description"]
-      table = Item.arel_table
-      item = Item.find_by(table[:description].matches("#{params["description"]}"))
+    if params[:id]
+      item = Item.find(params[:id])
     else
       item = Item.find_by(item_params)
     end

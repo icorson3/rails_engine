@@ -1,39 +1,27 @@
 class Api::V1::Invoices::FindController < ApplicationController
 
   def index
-    if params["status"]
-      table = Invoice.arel_table
-      merchant = Invoice.where(table[:status].matches("#{params["status"]}"))
-    elsif params["id"]
-      merchant = Invoice.where(id: params[:id])
-    elsif params["customer_id"]
-      merchant = Invoice.where(customer_id: params[:customer_id])
-    elsif params["merchant_id"]
-      merchant = Invoice.where(merchant_id: params[:merchant_id])
-    elsif params["created_at"]
-      merchant = Invoice.where(created_at: params[:created_at])
-    elsif params["updated_at"]
-      merchant = Invoice.where(updated_at: params[:updated_at])
+    if params[:id]
+      invoice = Invoice.where(id: params[:id])
+    else
+      invoice = Invoice.where(invoice_params)
     end
-    render json: merchant
+    render json: invoice
   end
 
   def show
-    if params["status"]
-      table = Invoice.arel_table
-      merchant = Invoice.find_by(table[:status].matches("#{params["status"]}"))
-    elsif params["id"]
-      merchant = Invoice.find_by(id: params[:id])
-    elsif params["customer_id"]
-      merchant = Invoice.find_by(customer_id: params[:customer_id])
-    elsif params["merchant_id"]
-      merchant = Invoice.find_by(merchant_id: params[:merchant_id])
-    elsif params["created_at"]
-      merchant = Invoice.find_by(created_at: params[:created_at])
-    elsif params["updated_at"]
-      merchant = Invoice.find_by(updated_at: params[:updated_at])
+    if params[:id]
+      invoice = Invoice.find(params[:id])
+    else
+      invoice = Invoice.find_by(invoice_params)
     end
-    render json: merchant
+    render json: invoice
+  end
+
+  private
+
+  def invoice_params
+    params.permit(:merchant_id, :status, :updated_at, :created_at, :customer_id)
   end
 
 end
