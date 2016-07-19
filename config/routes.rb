@@ -25,14 +25,13 @@ Rails.application.routes.draw do
   get 'api/v1/invoice_items/find_all' => 'api/v1/invoice_items/find#index'
   get 'api/v1/invoice_items/random' => 'api/v1/invoice_items/random#show'
 
+  get 'api/v1/merchants/:merchant_id/items' => 'api/v1/merchants/items#index'
+  get 'api/v1/merchants/:merchant_id/invoices' => 'api/v1/merchants/invoices#index'
+
 
   namespace :api do
     namespace :v1 do
-      resources :merchants, only: [:index, :show], defaults: { format: :json } do
-        resources :items, only: [:index], defaults: { format: :json}
-        resources :invoices, only: [:index], defaults: { format: :json}
-      end
-
+      resources :merchants, only: [:index, :show], defaults: { format: :json }
       resources :invoices, only: [:index, :show], defaults: { format: :json }
       resources :transactions, only: [:index, :show], defaults: { format: :json }
       resources :items, only: [:index, :show], defaults: { format: :json }
