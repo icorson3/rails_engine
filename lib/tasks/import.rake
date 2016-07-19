@@ -10,12 +10,22 @@ namespace :import do
     end
   end
 
+  desc "import invoices data from csv"
+  task invoices: :environment do
+    filename = File.join Rails.root, "data/invoices.csv"
+
+    CSV.foreach(filename, headers: true) do |row|
+      invoice = Invoice.create(customer_id: row["customer_id"], merchant_id: row["merchant_id"], status: row["status"], created_at: row["created_at"], updated_at: row["updated_at"])
+
+    end
+  end
+
   desc "import transactions data from csv"
   task transactions: :environment do
     filename = File.join Rails.root, "data/transactions.csv"
-
     CSV.foreach(filename, headers: true) do |row|
       merchant = Transaction.create(invoice_id: row["invoice_id"], credit_card_number: row["credit_card_number"], result: row["result"], created_at: row["created_at"], updated_at: row["updated_at"])
     end
   end
+  
 end

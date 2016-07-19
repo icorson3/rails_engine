@@ -3,6 +3,8 @@ class Api::V1::Transactions::FindController < ApplicationController
   def index
     if params["id"]
       transaction = Transaction.where(id: params[:id])
+    elsif params["invoice_id"]
+      transaction = Transaction.where(invoice_id: params[:invoice_id])
     elsif params["credit_card_number"]
       transaction = Transaction.where(credit_card_number: params[:credit_card_number])
     elsif params["result"]
@@ -18,6 +20,8 @@ class Api::V1::Transactions::FindController < ApplicationController
   def show
     if params["id"]
       transaction = Transaction.find(params[:id])
+    elsif params["invoice_id"]
+      transaction = Transaction.find_by(invoice_id: params[:invoice_id])
     elsif params["credit_card_number"]
       transaction = Transaction.find_by(credit_card_number: params[:credit_card_number])
     elsif params["result"]
