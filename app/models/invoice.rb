@@ -1,5 +1,6 @@
 class Invoice < ApplicationRecord
   belongs_to :merchant
-  #belongs_to :customer #ADD WHEN READY
+  belongs_to :customer
+  has_many :invoice_items
   default_scope { order('id ASC') }
 end

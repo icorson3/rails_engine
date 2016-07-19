@@ -28,6 +28,15 @@ namespace :import do
     end
   end
 
+  desc "import items data from csv"
+  task items: :environment do
+    filename = File.join Rails.root, "data/items.csv"
+    CSV.foreach(filename, headers: true) do |row|
+      merchant = Item.create(name: row["name"], description: row["description"], unit_price: row["unit_price"], merchant_id: row["merchant_id"], created_at: row["created_at"], updated_at: row["updated_at"])
+    end
+  end
+
+
   desc "import customers data from csv"
   task customers: :environment do
     filename = File.join Rails.root, "data/customers.csv"
@@ -45,4 +54,5 @@ namespace :import do
       invoice_item = InvoiceItem.create(item_id: row["item_id"], invoice_id: row["invoice_id"], quantity: row["quantity"], unit_price: row["unit_price"], created_at: row["created_at"], updated_at: row["updated_at"])
     end
   end
+
 end
