@@ -5,11 +5,17 @@ Rails.application.routes.draw do
   get 'api/v1/transactions/find' => 'api/v1/transactions/find#show'
   get 'api/v1/transactions/find_all' => 'api/v1/transactions/find#index'
   get 'api/v1/transactions/random' => 'api/v1/transactions/random#show'
+  get 'api/v1/customers/find' => 'api/v1/customers/find#show'
+  get 'api/v1/customers/find_all' => 'api/v1/customers/find#index'
+  get 'api/v1/customers/random' => 'api/v1/customers/random#show'
+
 
   namespace :api do
     namespace :v1 do
       resources :merchants, only: [:index, :show], defaults: { format: :json }
       resources :transactions, only: [:index, :show], defaults: { format: :json }
+      resources :customers, only: [:index, :show], defaults: { format: :json }
+
     end
   end
 
