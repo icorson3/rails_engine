@@ -27,5 +27,13 @@ namespace :import do
       merchant = Transaction.create(invoice_id: row["invoice_id"], credit_card_number: row["credit_card_number"], result: row["result"], created_at: row["created_at"], updated_at: row["updated_at"])
     end
   end
-  
+
+  desc "import items data from csv"
+  task items: :environment do
+    filename = File.join Rails.root, "data/items.csv"
+    CSV.foreach(filename, headers: true) do |row|
+      merchant = Item.create(name: row["name"], description: row["description"], unit_price: row["unit_price"], merchant_id: row["merchant_id"], created_at: row["created_at"], updated_at: row["updated_at"])
+    end
+  end
+
 end
