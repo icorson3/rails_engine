@@ -11,6 +11,7 @@ group :test do
   gem 'capybara'
   gem 'faraday'
   gem 'simplecov', :require => false
+  gem 'factory_girl_rails'
 end
 
 group :development, :test do

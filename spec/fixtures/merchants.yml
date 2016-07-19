@@ -1,0 +1,11 @@
+merchant_1:
+  id: 1
+  name: bob
+
+merchant_2:
+  id: 2
+  name: bobby
+
+merchant_3:
+  id: 3
+  name: bobber
