@@ -21,13 +21,14 @@ Rails.application.routes.draw do
   get 'api/v1/items/find_all' => 'api/v1/items/find#index'
   get 'api/v1/items/random' => 'api/v1/items/random#show'
 
+  get 'api/v1/invoice_items/:invoice_item_id/item' => 'api/v1/invoice_items/items#show'
+  get 'api/v1/invoice_items/:invoice_item_id/invoice' => 'api/v1/invoice_items/invoices#show'
   get 'api/v1/invoice_items/find' => 'api/v1/invoice_items/find#show'
   get 'api/v1/invoice_items/find_all' => 'api/v1/invoice_items/find#index'
   get 'api/v1/invoice_items/random' => 'api/v1/invoice_items/random#show'
 
   get 'api/v1/merchants/:merchant_id/items' => 'api/v1/merchants/items#index'
   get 'api/v1/merchants/:merchant_id/invoices' => 'api/v1/merchants/invoices#index'
-
 
   namespace :api do
     namespace :v1 do
