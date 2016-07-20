@@ -17,11 +17,17 @@ Rails.application.routes.draw do
   get 'api/v1/invoices/find' => 'api/v1/invoices/find#show'
   get 'api/v1/invoices/find_all' => 'api/v1/invoices/find#index'
   get 'api/v1/invoices/random' => 'api/v1/invoices/random#show'
-
+  get 'api/v1/invoices/:invoice_id/transactions' => 'api/v1/invoices/transactions#index'
+  get 'api/v1/invoices/:invoice_id/invoice_items' => 'api/v1/invoices/invoice_items#index'
+  get 'api/v1/invoices/:invoice_id/items' => 'api/v1/invoices/items#index'
+  get 'api/v1/invoices/:invoice_id/merchant' => 'api/v1/invoices/merchants#show'
+  get 'api/v1/invoices/:invoice_id/customer' => 'api/v1/invoices/customers#show'
 
   get 'api/v1/items/find' => 'api/v1/items/find#show'
   get 'api/v1/items/find_all' => 'api/v1/items/find#index'
   get 'api/v1/items/random' => 'api/v1/items/random#show'
+  get 'api/v1/items/:item_id/invoice_items' => 'api/v1/items/invoice_items#index'
+  get 'api/v1/items/:item_id/merchant' => 'api/v1/items/merchants#show'
 
   get 'api/v1/invoice_items/:invoice_item_id/item' => 'api/v1/invoice_items/items#show'
   get 'api/v1/invoice_items/:invoice_item_id/invoice' => 'api/v1/invoice_items/invoices#show'
