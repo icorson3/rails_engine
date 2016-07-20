@@ -16,7 +16,6 @@ class Api::V1::InvoiceItems::FindController < ApplicationController
       invoice_item = InvoiceItem.find(params[:id])
     elsif params[:unit_price]
       query_price = query_price_to_cents(params[:unit_price])
-      byebug
       invoice_item = InvoiceItem.find_by(unit_price: query_price)
     else
       invoice_item = InvoiceItem.find_by(invoice_item_params)

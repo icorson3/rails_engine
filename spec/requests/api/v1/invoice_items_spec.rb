@@ -18,7 +18,7 @@ RSpec.describe "InvoiceItems API", :type => :request do
     expect(json.first["created_at"]).to eq(nil)
     expect(json.first["updated_at"]).to eq(nil)
 
-    expect(json.count).to eq(Invoice.count)
+    expect(json.count).to eq(InvoiceItem.count)
   end
 
   it 'retrieves one invoice' do
@@ -58,9 +58,9 @@ RSpec.describe "InvoiceItems API", :type => :request do
     expect(json["id"]).to eq(invoice_item.id)
   end
 
-  xit "finds an invoice_item by unit price" do
+  it "finds an invoice_item by unit price" do
     invoice_item = create(:invoice_item)
-    unit_price_search = (invoice_item.unit_price.to_f/100).round(2)
+    unit_price_search = ((invoice_item.unit_price.to_f)/100.round(2)).to_s
 
     get "/api/v1/invoice_items/find?unit_price=#{unit_price_search}"
 

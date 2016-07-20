@@ -11,6 +11,9 @@ FactoryGirl.define do
   factory :item do
     name { generate :item_name }
     merchant
+    unit_price "1005"
+    created_at "2016-01-01 00:00:00"
+    updated_at "2016-01-01 00:00:00"
   end
 
   sequence :item_name do |n|
