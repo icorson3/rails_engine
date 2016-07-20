@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'api/v1/transactions/find_all' => 'api/v1/transactions/find#index'
   get 'api/v1/transactions/random' => 'api/v1/transactions/random#show'
 
+  get 'api/v1/transactions/:transaction_id/invoice' => 'api/v1/transactions/invoices#show'
+
   get 'api/v1/customers/find' => 'api/v1/customers/find#show'
   get 'api/v1/customers/find_all' => 'api/v1/customers/find#index'
   get 'api/v1/customers/random' => 'api/v1/customers/random#show'
@@ -23,6 +25,10 @@ Rails.application.routes.draw do
 
   get 'api/v1/invoice_items/:invoice_item_id/item' => 'api/v1/invoice_items/items#show'
   get 'api/v1/invoice_items/:invoice_item_id/invoice' => 'api/v1/invoice_items/invoices#show'
+
+  get 'api/v1/customers/:customer_id/invoices' => 'api/v1/customers/invoices#index'
+  get 'api/v1/customers/:customer_id/transactions' => 'api/v1/customers/transactions#index'
+
   get 'api/v1/invoice_items/find' => 'api/v1/invoice_items/find#show'
   get 'api/v1/invoice_items/find_all' => 'api/v1/invoice_items/find#index'
   get 'api/v1/invoice_items/random' => 'api/v1/invoice_items/random#show'
