@@ -1,9 +1,7 @@
 class Api::V1::Items::FindController < ApplicationController
 
   def index
-    if params[:id]
-      item = Item.where(id: params[:id])
-    elsif params[:unit_price]
+    if params[:unit_price]
       query_price = query_price_to_cents(params[:unit_price])
       item = Item.where(unit_price: query_price)
     else
@@ -13,9 +11,7 @@ class Api::V1::Items::FindController < ApplicationController
   end
 
   def show
-    if params[:id]
-      item = Item.find(params[:id])
-    elsif params[:unit_price]
+    if params[:unit_price]
       query_price = query_price_to_cents(params[:unit_price])
       item = Item.find_by(unit_price: query_price)
     else

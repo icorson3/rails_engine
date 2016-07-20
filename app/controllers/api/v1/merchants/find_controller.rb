@@ -1,22 +1,13 @@
 class Api::V1::Merchants::FindController < ApplicationController
   def index
-    if params[:id]
-      merchant = Merchant.where(id: params[:id])
-    else
-      merchant = Merchant.where(merchant_params)
-    end
+    merchant = Merchant.where(merchant_params)
     render json: merchant
   end
 
   def show
-    if params[:id]
-      merchant = Merchant.find(params[:id])
-    else
-      merchant = Merchant.find_by(merchant_params)
-    end
+    merchant = Merchant.find_by(merchant_params)
     render json: merchant
   end
-
 
   private
 
