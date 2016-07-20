@@ -1,22 +1,13 @@
 class Api::V1::Customers::FindController < ApplicationController
   def index
-    if params[:id]
-      customer = Customer.where(id: params[:id])
-    else
-      customer = Customer.where(customer_params)
-    end
+    customer = Customer.where(customer_params)
     render json: customer
   end
 
   def show
-    if params[:id]
-      customer = Customer.find(params[:id])
-    else
-      customer = Customer.find_by(customer_params)
-    end
+    customer = Customer.find_by(customer_params)
     render json: customer
   end
-
 
   private
 
