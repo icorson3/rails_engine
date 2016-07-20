@@ -6,14 +6,96 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/kerrysheldon/turing/3module/projects/rails_engine/spec/features/user_can_see_a_list_of_json_merchants_spec.rb": [
         1,
         null,
         1,
+=======
+      "/Users/icorson3/turing/3module/rails_engine/spec/requests/api/v1/transactions_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
         1,
         null,
         null,
+        1,
+        1,
         null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
+        1,
+        null,
+        null,
+<<<<<<< HEAD
+=======
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
         null,
         null
       ],
@@ -269,6 +351,7 @@
         1,
         null,
         1,
+<<<<<<< HEAD
         70,
         null,
         null,
@@ -280,12 +363,26 @@
         32,
         1,
         1,
+=======
+        16,
+        null,
+        null,
+        1,
+        15,
+        null,
+        null,
+        1,
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
         1,
         1,
         null,
         null,
         1,
+<<<<<<< HEAD
         31,
+=======
+        0,
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
         null,
         null,
         1,
@@ -297,8 +394,16 @@
         null,
         null,
         1,
+        16,
+        16,
+        null,
+        null,
         1,
+        15,
+        null,
+        null,
         1,
+        15,
         null,
         null,
         1,
@@ -308,6 +413,16 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        14,
+        1,
+        1,
+        null,
+        null,
+        1,
+        13,
         null,
         null
       ],
@@ -356,30 +471,58 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/kerrysheldon/turing/3module/projects/rails_engine/spec/requests/api/v1/invoice_items_relationships_spec.rb": [
+=======
+      "/Users/icorson3/turing/3module/rails_engine/app/models/transaction.rb": [
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
         1,
         null,
         1,
+<<<<<<< HEAD
         null,
         1,
         1,
+=======
+        24,
+        null
+      ],
+      "/Users/icorson3/turing/3module/rails_engine/app/models/application_record.rb": [
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
         1,
+        null,
+        1,
+<<<<<<< HEAD
+        1,
+        null,
+=======
+        null
+      ],
+      "/Users/icorson3/turing/3module/rails_engine/app/models/invoice.rb": [
+        1,
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
+        1,
+        null,
+        1,
+<<<<<<< HEAD
         null,
         1,
         1,
         null,
+        null,
+=======
+        1,
+        16,
+        null
+      ],
+      "/Users/icorson3/turing/3module/rails_engine/app/models/merchant.rb": [
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
+        1,
+        16,
+        1,
         1,
         null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
+<<<<<<< HEAD
         1,
         null,
         1,
@@ -393,10 +536,22 @@
       "/Users/kerrysheldon/turing/3module/projects/rails_engine/spec/requests/api/v1/invoice_items_spec.rb": [
         1,
         null,
+=======
+        null
+      ],
+      "/Users/icorson3/turing/3module/rails_engine/app/models/customer.rb": [
+        1,
+        1,
+        16,
+        null
+      ],
+      "/Users/icorson3/turing/3module/rails_engine/app/controllers/api/v1/transactions_controller.rb": [
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
         1,
         null,
         1,
         1,
+        null,
         null,
         1,
         null,
@@ -476,42 +631,14 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/kerrysheldon/turing/3module/projects/rails_engine/spec/requests/api/v1/invoices_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
+=======
+      "/Users/icorson3/turing/3module/rails_engine/app/serializers/transaction_serializer.rb": [
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
+<<<<<<< HEAD
         null,
         1,
         1,
@@ -520,6 +647,28 @@
         null,
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
         null,
@@ -555,6 +704,21 @@
         null,
         1,
         1,
+        null,
+=======
+        null
+      ],
+      "/Users/icorson3/turing/3module/rails_engine/app/controllers/api/v1/transactions/find_controller.rb": [
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
         1,
         1,
         1,
@@ -564,7 +728,15 @@
         1,
         null,
         1,
+        2,
+        0,
         null,
+        2,
+        null,
+        2,
+        null,
+        null,
+<<<<<<< HEAD
         null
       ],
       "/Users/kerrysheldon/turing/3module/projects/rails_engine/spec/requests/api/v1/items_spec.rb": [
@@ -600,19 +772,13 @@
         1,
         1,
         1,
+=======
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
         1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
+        3,
         1,
         null,
-        1,
-        null,
-        1,
-        null,
+<<<<<<< HEAD
         null,
         1,
         1,
@@ -620,6 +786,28 @@
         1,
         null,
         1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+=======
+        2,
+        null,
+        3,
+        null,
+        null,
+        null,
+        1,
+        null,
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
+        1,
+        4,
+        null,
         null,
         1,
         null,
@@ -1039,6 +1227,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1468979334
+=======
+    "timestamp": 1468979423
+>>>>>>> 419e1ac70c835844c4b009cf91710398527ade9a
   }
 }
