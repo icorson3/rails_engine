@@ -21,12 +21,6 @@ class Merchant < ApplicationRecord
     # result.to_json
   end
 
-  def self.total_revenue_on_date(date)
-   #returns the total revenue for date x across all merchants
-
-   result = self.joins(invoices: [:invoice_items, :transactions]).where("transactions.result = 'success'").where("").group("merchants.id").order("sum_invoice_items_quantity_all_invoice_items_unit_price DESC").limit(top_number).sum("invoice_items.quantity * invoice_items.unit_price")
-
-  end
 
 
   def revenue
