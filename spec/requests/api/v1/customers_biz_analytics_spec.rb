@@ -27,7 +27,9 @@ RSpec.describe "Customers Analytics API", :type => :request do
     expect(response).to be_success
 
     json = JSON.parse(response.body)
+
     expect(json["id"]).to eq(merchant_1.id)
+    expect(json["name"]).to eq(merchant_1.name)
   end
 end
 # GET /api/v1/customers/:id/favorite_merchant returns a merchant where the customer has conducted the most successful transactions
