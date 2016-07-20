@@ -11,6 +11,9 @@ FactoryGirl.define do
   factory :item do
     name { generate :item_name }
     merchant
+    unit_price "1005"
+    created_at "2016-01-01 00:00:00"
+    updated_at "2016-01-01 00:00:00"
   end
 
   sequence :item_name do |n|
@@ -21,6 +24,8 @@ FactoryGirl.define do
     status "pending"
     merchant
     customer
+    created_at "2016-01-01 00:00:00"
+    updated_at "2016-01-01 00:00:00"
   end
 
   factory :customer do
@@ -40,7 +45,9 @@ FactoryGirl.define do
     invoice
     item
     quantity 10
-    unit_price "1000"
+    unit_price "1005"
+    created_at "2016-01-01 00:00:00"
+    updated_at "2016-01-01 00:00:00"
   end
 
   factory :transaction do
