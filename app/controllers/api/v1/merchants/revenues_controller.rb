@@ -7,14 +7,15 @@ class Api::V1::Merchants::RevenuesController < ApplicationController
 
 
   def show
-    merchant = Merchant.find(params[:merchant_id])
-    if params["date"]
+    merchant = Merchant.find(params[:merchant_id]) if params[:merchant_id]
+    if params[:merchant_id] && params["date"]
       revenue = merchant.revenue_by_date(params["date"])
-      render json: revenue
+    elsif params["date"]
+      revenue = Invoice.total_revenue_on_date(params["date"])
     else
       revenue = merchant.revenue
-      render json: revenue
     end
+    render json: revenue
   end
 
 end
