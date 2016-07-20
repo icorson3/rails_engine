@@ -4,10 +4,10 @@ class Item < ApplicationRecord
   has_many :invoices, through: :invoice_items
 
   def self.most_revenue(top_num)
-
     self.joins(invoice_items: [invoice: [:transactions]]).where("transactions.result != 'failed'").group("items.id").order("sum_invoice_items_quantity_all_invoice_items_unit_price DESC").limit(top_num).sum("invoice_items.quantity * invoice_items.unit_price")
 
   end
+
 
   def self.most_items(top_number)
     self.joins(invoice_items: [invoice: [:transactions]]).where("transactions.result = 'success'").group("items.id").order("sum_invoice_items_quantity DESC").limit(top_number).sum("invoice_items.quantity")
