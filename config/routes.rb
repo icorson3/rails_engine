@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get 'api/v1/items/random' => 'api/v1/items/random#show'
   get 'api/v1/items/:item_id/invoice_items' => 'api/v1/items/invoice_items#index'
   get 'api/v1/items/:item_id/merchant' => 'api/v1/items/merchants#show'
+  get 'api/v1/items/most_revenue' => 'api/v1/items/revenue_analytics#index'
+  get 'api/v1/items/most_items' => 'api/v1/items/item_analytics#index'
+  get 'api/v1/items/:item_id/best_day' => 'api/v1/items/item_analytics#show'
+
 
   get 'api/v1/invoice_items/:invoice_item_id/item' => 'api/v1/invoice_items/items#show'
   get 'api/v1/invoice_items/:invoice_item_id/invoice' => 'api/v1/invoice_items/invoices#show'
@@ -43,10 +47,12 @@ Rails.application.routes.draw do
   get 'api/v1/merchants/:merchant_id/items' => 'api/v1/merchants/items#index'
   get 'api/v1/merchants/:merchant_id/invoices' => 'api/v1/merchants/invoices#index'
 
-  get "/api/v1/merchants/:merchant_id/revenue" =>'api/v1/merchants/revenues#show'
+  get "/api/v1/merchants/most_revenue" =>'api/v1/merchants/revenues#index'
   get "/api/v1/merchants/:merchant_id/revenue" =>'api/v1/merchants/revenues#show'
   get "/api/v1/merchants/:merchant_id/favorite_customer" =>'api/v1/merchants/customer_analytics#show'
   get "/api/v1/merchants/:merchant_id/customers_with_pending_invoices" =>'api/v1/merchants/customer_analytics#index'
+  get "/api/v1/merchants/most_items" => "api/v1/merchants/item_analytics#index"
+  get "/api/v1/merchants/revenue" => "api/v1/merchants/revenues#show"
 
   namespace :api do
     namespace :v1 do
