@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   get 'api/v1/merchants/:merchant_id/invoices' => 'api/v1/merchants/invoices#index'
 
   get "/api/v1/merchants/:merchant_id/revenue" =>'api/v1/merchants/revenues#show'
+  get "/api/v1/merchants/most_revenue" =>'api/v1/merchants/revenues#index'
 
   namespace :api do
     namespace :v1 do
