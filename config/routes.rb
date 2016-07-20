@@ -42,6 +42,8 @@ Rails.application.routes.draw do
   get 'api/v1/merchants/:merchant_id/items' => 'api/v1/merchants/items#index'
   get 'api/v1/merchants/:merchant_id/invoices' => 'api/v1/merchants/invoices#index'
 
+  get "/api/v1/merchants/:merchant_id/revenue" =>'api/v1/merchants/revenues#show'
+
   namespace :api do
     namespace :v1 do
       resources :merchants, only: [:index, :show], defaults: { format: :json }
