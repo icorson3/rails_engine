@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-19T21:45:38-06:00">2016-07-19T21:45:38-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-20T07:33:26-06:00">2016-07-20T07:33:26-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>60</b> files in total.
-    <b>645</b> relevant lines. 
-    <span class="green"><b>641</b> lines covered</span> and
+    <b>644</b> relevant lines. 
+    <span class="green"><b>640</b> lines covered</span> and
     <span class="red"><b>4</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -243,11 +243,11 @@
       <tr>
         <td class="strong"><a href="#88ae948149ef4ad89aabef6243f256ef401a0b9e" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>4</td>
-        <td>4</td>
+        <td>10</td>
+        <td>3</td>
+        <td>3</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -2513,8 +2513,8 @@
     <h3>app/controllers/application_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2540,28 +2540,28 @@
           <code class="ruby">  def query_price_to_cents(query_price)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">    float_price = (query_price.to_f*100).round</code>
+          
+          <code class="ruby">    # float_price =</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">    float_price.to_s</code>
+          <code class="ruby">    (query_price.to_f*100).round</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    # float_price.to_s</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -2571,6 +2571,12 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
