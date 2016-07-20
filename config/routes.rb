@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
   get 'api/v1/customers/:customer_id/invoices' => 'api/v1/customers/invoices#index'
   get 'api/v1/customers/:customer_id/transactions' => 'api/v1/customers/transactions#index'
+  get "/api/v1/customers/:customer_id/favorite_merchant" =>'api/v1/customers/merchant_analytics#show'
 
   get 'api/v1/invoice_items/find' => 'api/v1/invoice_items/find#show'
   get 'api/v1/invoice_items/find_all' => 'api/v1/invoice_items/find#index'
@@ -43,6 +44,9 @@ Rails.application.routes.draw do
   get 'api/v1/merchants/:merchant_id/invoices' => 'api/v1/merchants/invoices#index'
 
   get "/api/v1/merchants/:merchant_id/revenue" =>'api/v1/merchants/revenues#show'
+  get "/api/v1/merchants/:merchant_id/revenue" =>'api/v1/merchants/revenues#show'
+  get "/api/v1/merchants/:merchant_id/favorite_customer" =>'api/v1/merchants/customer_analytics#show'
+  get "/api/v1/merchants/:merchant_id/customers_with_pending_invoices" =>'api/v1/merchants/customer_analytics#index'
 
   namespace :api do
     namespace :v1 do
