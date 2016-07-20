@@ -24,8 +24,16 @@ FactoryGirl.define do
   end
 
   factory :customer do
-    first_name "bob"
-    last_name "shithead"
+    first_name { generate :customer_first_name }
+    last_name { generate :customer_last_name }
+  end
+
+  sequence :customer_first_name do |n|
+    "customer-#{n}"
+  end
+
+  sequence :customer_last_name do |n|
+    "customer-#{n}"
   end
 
   factory :invoice_item do
@@ -33,5 +41,15 @@ FactoryGirl.define do
     item
     quantity 10
     unit_price "1000"
+  end
+
+  factory :transaction do
+    credit_card_number { generate :numbers }
+    result "success"
+    invoice
+  end
+
+  sequence :numbers do |n|
+    "transaction-#{n}"
   end
 end
