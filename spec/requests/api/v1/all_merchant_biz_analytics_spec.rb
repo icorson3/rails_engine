@@ -49,7 +49,7 @@ RSpec.describe "All Merchant Analytics API", :type => :request do
 
     json = JSON.parse(response.body)
 
-    expect(json.first.count).to eq(1)
+    expect(json.count).to eq(1)
 
     expect(json.first["name"]).to eq(item1.name)
     expect(json.first["id"]).to eq(item1.id)
