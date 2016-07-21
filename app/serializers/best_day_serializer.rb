@@ -4,5 +4,4 @@ class BestDaySerializer < ActiveModel::Serializer
   def best_day
     object
   end
-
 end

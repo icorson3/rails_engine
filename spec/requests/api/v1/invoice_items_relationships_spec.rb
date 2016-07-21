@@ -28,5 +28,4 @@ RSpec.describe "Invoice items Relationships", :type => :request do
     json = JSON.parse(response.body)
     expect(json["id"]).to eq(invoice_item.item_id)
   end
-
 end

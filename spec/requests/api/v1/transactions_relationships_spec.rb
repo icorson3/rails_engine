@@ -14,6 +14,4 @@ RSpec.describe "Transaction Relationships", :type => :request do
     json = JSON.parse(response.body)
     expect(json["id"]).to eq(transaction.invoice_id)
   end
-
-
 end

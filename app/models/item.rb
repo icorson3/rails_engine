@@ -20,5 +20,4 @@ class Item < ApplicationRecord
   def best_day
     invoice_items.joins(invoice: [:transactions]).where("transactions.result = 'success'").group("invoices.created_at").order("sum_invoice_items_quantity_all_invoice_items_unit_price DESC").limit(1).sum("invoice_items.quantity * invoice_items.unit_price").keys.first
   end
-
 end
