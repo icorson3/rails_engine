@@ -3,9 +3,9 @@ class Api::V1::Items::FindController < ApplicationController
   def index
     if params[:unit_price]
       query_price = query_price_to_cents(params[:unit_price])
-      item = Item.where(unit_price: query_price)
+      item = Item.order_by_id.where(unit_price: query_price)
     else
-      item = Item.where(item_params)
+      item = Item.order_by_id.where(item_params)
     end
     render json: item
   end
@@ -13,9 +13,9 @@ class Api::V1::Items::FindController < ApplicationController
   def show
     if params[:unit_price]
       query_price = query_price_to_cents(params[:unit_price])
-      item = Item.find_by(unit_price: query_price)
+      item = Item.order_by_id.find_by(unit_price: query_price)
     else
-      item = Item.find_by(item_params)
+      item = Item.order_by_id.find_by(item_params)
     end
     render json: item
   end

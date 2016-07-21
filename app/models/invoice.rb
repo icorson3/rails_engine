@@ -9,7 +9,7 @@ class Invoice < ApplicationRecord
 
    result = self.joins(:invoice_items, :transactions).where("transactions.result = 'success'").where("invoices.created_at = '#{date}'").sum("invoice_items.quantity * invoice_items.unit_price")/100.0
 
-   result.to_s
+   {"total_revenue" => result.to_s}
 
   end
 end

@@ -2,7 +2,7 @@ class Api::V1::Merchants::RevenuesController < ApplicationController
 
   def index
     top_revenue_earners = Merchant.most_revenue(params[:quantity])
-    render json: top_revenue_earners
+    render json: top_revenue_earners#, serializer: MostRevenueSerializer
   end
 
 

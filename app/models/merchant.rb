@@ -8,30 +8,18 @@ class Merchant < ApplicationRecord
   def self.most_revenue(top_number)
     result = self.joins(invoices: [:invoice_items, :transactions]).where("transactions.result = 'success'").group("merchants.id").order("sum_invoice_items_quantity_all_invoice_items_unit_price DESC").limit(top_number).sum("invoice_items.quantity * invoice_items.unit_price")
 
-    #THIS NEEDS TO GET FIXED
-    # result = result.inject({}) do |hash, (merch_id, rev_in_cents)|
-    #   hash["id"] = merch_id
-    #   hash["name"] = Merchant.find(merch_id).name
-    #   hash["revenue"] = sprintf('%.2f', rev_in_cents/100.0).to_s
-    #   hash
-    # end
-    # result.to_json
+    merchants = Merchant.find(result.keys).map do |merchant|
+      {id: merchant.id, name: merchant.name}
+    end
   end
 
   def self.most_items(top_number)
-    result = self.joins(invoices: [:transactions, :invoice_items]).where("transactions.result = 'success'").group("merchants.id").order("sum_invoice_items_quantity DESC").limit(top_number).sum("invoice_items.quantity").keys
+    result = self.joins(invoices: [:transactions, :invoice_items]).where("transactions.result = 'success'").group("merchants.id").order("sum_invoice_items_quantity DESC").limit(top_number).sum("invoice_items.quantity")
 
-    hash = {}
-    result.each do |item|
-
-
-    # result = result.map do |item_id|
-
-
-    # {89=>1653, 12=>1585, 22=>1529, 98=>1507, 74=>1470, 49=>1422, 58=>1407, 84=>1397}
-
-    # result.to_json
+    merchants = Merchant.find(result.keys).map do |merchant|
+      {id: merchant.id, name: merchant.name}
     end
+
   end
 
   def revenue
