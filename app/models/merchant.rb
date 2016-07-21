@@ -8,28 +8,23 @@ class Merchant < ApplicationRecord
   def self.most_revenue(top_number)
     result = self.joins(invoices: [:invoice_items, :transactions]).where("transactions.result = 'success'").group("merchants.id").order("sum_invoice_items_quantity_all_invoice_items_unit_price DESC").limit(top_number).sum("invoice_items.quantity * invoice_items.unit_price")
 
-    merchants = Merchant.find(result.keys).map do |merchant|
-      {id: merchant.id, name: merchant.name}
-    end
+    Merchant.find(result.keys)
   end
 
   def self.most_items(top_number)
     result = self.joins(invoices: [:transactions, :invoice_items]).where("transactions.result = 'success'").group("merchants.id").order("sum_invoice_items_quantity DESC").limit(top_number).sum("invoice_items.quantity")
 
-    merchants = Merchant.find(result.keys).map do |merchant|
-      {id: merchant.id, name: merchant.name}
-    end
-
+    Merchant.find(result.keys)
   end
 
   def revenue
     revenue = (invoices.joins(:transactions, :invoice_items).where("transactions.result != 'failed'").sum("invoice_items.quantity * invoice_items.unit_price")/100.0)
-    result = {"revenue" => sprintf('%.2f', revenue)}
+    # result = {"revenue" => sprintf('%.2f', revenue)}
   end
 
   def revenue_by_date(date)
     revenue = (invoices.where("invoices.created_at = '#{date}'").joins(:transactions, :invoice_items).where("transactions.result != 'failed'").sum("invoice_items.quantity * invoice_items.unit_price")/100.0)
-    result = {"revenue" => sprintf('%.2f', revenue)}
+    # result = {"revenue" => sprintf('%.2f', revenue)}
   end
 
   def favorite_customer
