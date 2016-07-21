@@ -11,5 +11,4 @@ class Api::V1::Merchants::CustomerAnalyticsController < ApplicationController
     favorite_customer = merchant.favorite_customer
     render json: favorite_customer
   end
-
 end

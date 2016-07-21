@@ -35,6 +35,4 @@ RSpec.describe "Merchants Relationships", :type => :request do
     expect(json.count).to eq(1)
     expect(json.first["merchant_id"]).to eq(merchant.id)
   end
-
-
 end

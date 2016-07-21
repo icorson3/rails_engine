@@ -34,6 +34,4 @@ RSpec.describe "Customer Relationships", :type => :request do
     expect(json.first["id"]).to eq(transaction.id)
     expect(json.first["credit_card_number"]).to eq(transaction.credit_card_number)
   end
-
-
 end

@@ -17,7 +17,5 @@ class Api::V1::Merchants::RevenuesController < ApplicationController
       revenue = merchant.revenue
       render json: revenue, serializer: RevenueSerializer
     end
-
   end
-
 end

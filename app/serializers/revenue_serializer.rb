@@ -4,6 +4,4 @@ class RevenueSerializer < ActiveModel::Serializer
   def revenue
     sprintf('%.2f', object)
   end
-
-
 end
