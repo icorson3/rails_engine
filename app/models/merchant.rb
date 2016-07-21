@@ -7,13 +7,11 @@ class Merchant < ApplicationRecord
 
   def self.most_revenue(top_number)
     result = self.joins(invoices: [:invoice_items, :transactions]).where("transactions.result = 'success'").group("merchants.id").order("sum_invoice_items_quantity_all_invoice_items_unit_price DESC").limit(top_number).sum("invoice_items.quantity * invoice_items.unit_price")
-
     Merchant.find(result.keys)
   end
 
   def self.most_items(top_number)
     result = self.joins(invoices: [:transactions, :invoice_items]).where("transactions.result = 'success'").group("merchants.id").order("sum_invoice_items_quantity DESC").limit(top_number).sum("invoice_items.quantity")
-
     Merchant.find(result.keys)
   end
 

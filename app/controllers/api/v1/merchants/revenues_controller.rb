@@ -12,7 +12,7 @@ class Api::V1::Merchants::RevenuesController < ApplicationController
       render json: revenue, serializer: RevenueSerializer
     elsif params["date"]
       revenue = Invoice.total_revenue_on_date(params["date"])
-      render json: revenue
+      render json: revenue, serializer: TotalRevenueSerializer
     else
       revenue = merchant.revenue
       render json: revenue, serializer: RevenueSerializer
