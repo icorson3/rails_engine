@@ -5,8 +5,9 @@ To use:
 ```
 git clone git@github.com:icorson3/rails_engine.git
 cd rails_engine
+bundle
 rake db:reset
-rake import:all
+rake db import:all
 ```
 
 Once you start the server, the following endpoints are available to use.  Additional endpoints as shown in the routes file.
