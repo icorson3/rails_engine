@@ -19,7 +19,6 @@ class Api::V1::InvoiceItems::FindController < ApplicationController
     render json: invoice_item
   end
 
-
   private
 
   def invoice_item_params

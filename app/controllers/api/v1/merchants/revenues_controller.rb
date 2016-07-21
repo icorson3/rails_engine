@@ -5,7 +5,6 @@ class Api::V1::Merchants::RevenuesController < ApplicationController
     render json: top_revenue_earners#, serializer: MostRevenueSerializer
   end
 
-
   def show
     merchant = Merchant.find(params[:merchant_id]) if params[:merchant_id]
     if params[:merchant_id] && params["date"]
