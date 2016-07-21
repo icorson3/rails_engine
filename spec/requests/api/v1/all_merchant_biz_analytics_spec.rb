@@ -53,6 +53,7 @@ RSpec.describe "All Merchant Analytics API", :type => :request do
 
     expect(json.first["name"]).to eq(item1.name)
     expect(json.first["id"]).to eq(item1.id)
+  end
 
     it 'retrieves revenue for a specific date for a merchant' do
 
@@ -78,6 +79,5 @@ RSpec.describe "All Merchant Analytics API", :type => :request do
 
       expect(json["total_revenue"]).to eq("201.00")
     end
-  end
 
 end
