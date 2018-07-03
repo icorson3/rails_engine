@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :merchant do
     name { generate(:merchant_name) }

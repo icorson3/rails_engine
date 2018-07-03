@@ -1,12 +1,10 @@
 class Api::V1::Customers::FindController < ApplicationController
   def index
-    customer = Customer.where(customer_params)
-    render json: customer
+    render json: Customer.where(customer_params)
   end
 
   def show
-    customer = Customer.find_by(customer_params)
-    render json: customer
+    render json: Customer.find_by(customer_params)
   end
 
   private

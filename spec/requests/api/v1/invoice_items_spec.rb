@@ -44,8 +44,7 @@ RSpec.describe "InvoiceItems API", :type => :request do
     get "/api/v1/invoice_items/find?invoice_id=#{invoice_item3.invoice_id}"
 
     json = JSON.parse(response.body)
-
-    expect(json["id"]).to eq(invoice_item3.id)
+    expect(json.first["id"]).to eq(invoice_item3.id)
   end
 
   it "finds an invoice item by created at" do
@@ -55,7 +54,7 @@ RSpec.describe "InvoiceItems API", :type => :request do
 
     json = JSON.parse(response.body)
 
-    expect(json["id"]).to eq(invoice_item.id)
+    expect(json.first["id"]).to eq(invoice_item.id)
   end
 
   it "finds an invoice_item by unit price" do
@@ -66,7 +65,7 @@ RSpec.describe "InvoiceItems API", :type => :request do
 
     json = JSON.parse(response.body)
 
-    expect(json["id"]).to eq(invoice_item.id)
+    expect(json.first["id"]).to eq(invoice_item.id)
   end
 
   it "finds all invoice_items by invoice id" do

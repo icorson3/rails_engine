@@ -1,13 +1,11 @@
 class Api::V1::Invoices::FindController < ApplicationController
 
   def index
-    invoice = Invoice.where(invoice_params)
-    render json: invoice
+    render json: Invoice.where(invoice_params)
   end
 
   def show
-    invoice = Invoice.find_by(invoice_params)
-    render json: invoice
+    render json: Invoice.find_by(invoice_params)
   end
 
   private

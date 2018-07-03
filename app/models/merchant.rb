@@ -16,19 +16,46 @@ class Merchant < ApplicationRecord
   end
 
   def revenue
-    revenue = (invoices.joins(:transactions, :invoice_items).where("transactions.result != 'failed'").sum("invoice_items.quantity * invoice_items.unit_price")/100.0)
+    invoices
+    .joins(:transactions, :invoice_items)
+    .where("transactions.result != 'failed'")
+    .sum("invoice_items.quantity * invoice_items.unit_price")/100.0
   end
 
   def revenue_by_date(date)
-    revenue = (invoices.where("invoices.created_at = '#{date}'").joins(:transactions, :invoice_items).where("transactions.result != 'failed'").sum("invoice_items.quantity * invoice_items.unit_price")/100.0)
+    invoices
+    .where("invoices.created_at = '#{date}'")
+    .joins(:transactions, :invoice_items)
+    .where("transactions.result != 'failed'")
+    .sum("invoice_items.quantity * invoice_items.unit_price")/100.0
   end
 
   def favorite_customer
-    result = customers.joins(invoices: [:transactions]).where("transactions.result != 'failed'").group("customers.id").order("count_transactions desc").limit(1).count("transactions")
-    { "id" => result.keys.first }
+    result = customers
+    .joins(invoices: [:transactions])
+    .where("transactions.result != 'failed'")
+    .group("customers.id")
+    .order("count_transactions desc")
+    .limit(1)
+    .count("transactions")
   end
 
   def customers_with_pending_invoices
-    customers.joins(:invoices).joins("INNER JOIN transactions on transactions.invoice_id=invoices.id").where("transactions.result='failed'").distinct
+    customers
+    .joins(:invoices)
+    .joins("INNER JOIN transactions on transactions.invoice_id = invoices.id")
+    .where("transactions.result = 'failed'")
+    .distinct
+  end
+
+  def self.favorite_of_customer(id)
+    select("merchants.*, count(transactions) AS count_transactions")
+    .joins(:customers)
+    .where("customers.id = #{id}")
+    .joins(invoices: [:transactions])
+    .where("transactions.result != 'failed'")
+    .group("merchants.id")
+    .order("count_transactions desc")
+    .first
   end
 end
